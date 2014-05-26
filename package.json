@@ -28,9 +28,7 @@
         "compress"
     ],
     "dependencies": {
-        "html-minifier": ">=0.6.1"
-    },
-    "peerDependencies": {
+        "html-minifier": ">=0.6.1",
         "grunt": ">=0.4.5"
     }
 }
