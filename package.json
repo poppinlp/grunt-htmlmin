@@ -5,10 +5,10 @@
     "main": "tasks/htmlmin.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/poppinlp/grunt_htmlmin"
+        "url": "https://github.com/poppinlp/grunt-htmlmin"
     },
     "bugs": {
-        "url": "https://github.com/poppinlp/grunt_htmlmin/issues"
+        "url": "https://github.com/poppinlp/grunt-htmlmin/issues"
     },
     "author": {
         "name": "PoppinL",
