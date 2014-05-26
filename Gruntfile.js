@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
     grunt.config.init({
         htmlmin: {
-            dist: {
+            dir: {
                 options: {
                     removeComments: true,
                     collapseWhitespace: true
@@ -9,6 +9,12 @@ module.exports = function(grunt) {
                 files: {
                     src: 'test/src/',
                     dest: 'test/dest/'
+                }
+            },
+            file: {
+                files: {
+                    src: 'test/src/index.html',
+                    dest: 'test/dest/index.html'
                 }
             }
         }

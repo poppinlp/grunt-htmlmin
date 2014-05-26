@@ -6,7 +6,7 @@ Grunt task to minify html. This support folder path not only file path compared 
 ```
 grunt.config.init({
     htmlmin: {
-        dist: {
+        dir: {
             options: {
                 removeComments: true,
                 collapseWhitespace: true
@@ -14,6 +14,12 @@ grunt.config.init({
             files: {
                 src: 'test/src/',
                 dest: 'test/dest/'
+            }
+        },
+        file: {
+            files: {
+                src: 'test/src/index.html',
+                dest: 'test/dest/index.html'
             }
         }
     }
