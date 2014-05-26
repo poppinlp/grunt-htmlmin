@@ -1,0 +1,36 @@
+{
+    "name": "grunt-htmlmin",
+    "version": "0.0.1",
+    "description": "Grunt task to minify html. This support folder path not only file path compared to grunt-contrib-htmlmin.",
+    "main": "tasks/htmlmin.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/poppinlp/grunt_htmlmin"
+    },
+    "bugs": {
+        "url": "https://github.com/poppinlp/grunt_htmlmin/issues"
+    },
+    "author": {
+        "name": "PoppinL",
+        "email": "poppinlp@gmail.com",
+        "url": "http://poppinlp.github.io"
+    },
+    "license": "MIT",
+    "readmeFilename": "README.md",
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "keywords": [
+        "gruntplugin",
+        "html",
+        "minify",
+        "min",
+        "compress"
+    ],
+    "dependencies": {
+        "html-minifier": ">=0.6.1"
+    },
+    "peerDependencies": {
+        "grunt": ">=0.4.5"
+    }
+}
