@@ -18,6 +18,7 @@ module.exports = function (grunt) {
 
         function minFile (path, root, sub, file) {
             var text, target;
+            if (file[0] === '.' || file[0] === '_') return;
             text = grunt.file.read(path, { encoding: 'utf8' });
             try {
                 text = minify(text, options);
