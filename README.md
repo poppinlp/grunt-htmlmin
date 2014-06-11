@@ -1,9 +1,9 @@
-#Grunt-htmlmin
+# Grunt-htmlmin
 Grunt task to minify html. Ignore `.filename` and `_filename`.
 
 This support folder path not only file path compared to [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin).
 
-###Example config
+### Example config
 
 ```
 grunt.config.init({
@@ -19,6 +19,10 @@ grunt.config.init({
             }
         },
         file: {
+            options: {
+                removeComments: true,
+                collapseWhitespace: true
+            },
             files: {
                 src: 'test/src/index.html',
                 dest: 'test/dest/index.html'
@@ -31,8 +35,12 @@ grunt.config.init({
 For detail about options please see [options](https://github.com/kangax/html-minifier#options-quick-reference).
 
 
-###Demo
+### Demo
 
 ```
 grunt test
 ```
+
+### Version
+
+- Ver 0.0.6 Main

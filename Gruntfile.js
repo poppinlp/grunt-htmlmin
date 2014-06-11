@@ -1,5 +1,11 @@
 module.exports = function(grunt) {
     grunt.config.init({
+        jshint: {
+            options: grunt.file.readJSON(__dirname + '/.jshintrc'),
+            www: {
+                src: ['tasks/htmlmin.js']
+            }
+        },
         htmlmin: {
             dir: {
                 options: {
@@ -12,6 +18,10 @@ module.exports = function(grunt) {
                 }
             },
             file: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
                 files: {
                     src: 'test/src/index.html',
                     dest: 'test/dest/index.html'
@@ -20,5 +30,6 @@ module.exports = function(grunt) {
         }
     });
     grunt.loadTasks('tasks/');
-    grunt.registerTask('test', ['htmlmin']);
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.registerTask('test', ['jshint', 'htmlmin']);
 };
