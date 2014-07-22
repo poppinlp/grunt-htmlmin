@@ -1,7 +1,7 @@
 {
     "name": "grunt-htmlmin",
-    "version": "0.0.6",
-    "description": "Grunt task to minify html. This support folder path not only file path compared to grunt-contrib-htmlmin.",
+    "version": "0.0.7",
+    "description": "Grunt task to minify html.",
     "main": "tasks/htmlmin.js",
     "repository": {
         "type": "git",
