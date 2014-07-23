@@ -1,10 +1,19 @@
-var minify = require('html-minifier').minify;
+/*
+ * grunt-jsmerge
+ * https://github.com/poppinlp/grunt-jsmerge
+ *
+ * Copyright (c) 2014 "PoppinLp" Liang Peng
+ * Licensed under the MIT license.
+ */
+
+'use strict';
 
 module.exports = function (grunt) {
     grunt.registerTask('htmlmin', 'Minify HTML', function () {
-        var config = grunt.config.get('htmlmin'),
+        var minify = require('html-minifier').minify,
+            config = grunt.config.get('htmlmin'),
             ln = grunt.util.linefeed,
-            item, options, files;
+            task, options, files;
 
         for (task in config) {
             if (config.hasOwnProperty(task)) {
