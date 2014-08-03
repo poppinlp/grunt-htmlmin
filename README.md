@@ -31,19 +31,11 @@ For detail about options please see [options](https://github.com/kangax/html-min
 
 ### Usage Example
 
+#### Basic
+
 ```
 grunt.config.init({
     htmlmin: {
-        dir: {
-            options: {
-                removeComments: true,
-                collapseWhitespace: true
-            },
-            files: {
-                src: 'test/src/',
-                dest: 'test/dest/'
-            }
-        },
         file: {
             options: {
                 removeComments: true,
@@ -51,12 +43,80 @@ grunt.config.init({
             },
             files: {
                 src: 'test/src/index.html',
-                dest: 'test/dest/index.html'
+                dest: 'test/dest/'
             }
         }
     }
 });
 ```
+
+#### Global options
+
+```
+grunt.config.init({
+    htmlmin: {
+        options: {
+            removeComments: true
+        },
+        file: {
+            options: {
+                collapseWhitespace: true
+            },
+            files: {
+                src: 'test/src/index.html',
+                dest: 'test/dest/'
+            }
+        }
+    }
+});
+```
+
+#### Use pattern
+
+```
+grunt.config.init({
+    htmlmin: {
+        options: {
+            removeComments: true
+        },
+        file: {
+            options: {
+                collapseWhitespace: true
+            },
+            files: {
+                src: 'test/src/**/*.html',
+                dest: 'test/dest/'
+            }
+        }
+    }
+});
+```
+
+#### Use src array and filter
+
+```
+grunt.config.init({
+    htmlmin: {
+        options: {
+            removeComments: true
+        },
+        file: {
+            options: {
+                collapseWhitespace: true
+            },
+            files: {
+                src: ['index.html', 'tmp.html', 'dir/*.html'],
+                dest: 'test/dest/',
+                filter: {
+                    cwd: 'test/src/'
+                }
+            }
+        }
+    }
+});
+```
+
+__See [this page](https://github.com/isaacs/minimatch#options) for more options about filter.__
 
 ### Demo
 
@@ -68,5 +128,11 @@ grunt test
 
 ### Version
 
+- Ver 0.1.0
+    - Support global options for htmlmin
+    - Support file path pattern for `files.src`
+    - Support path array for `files.src`
+    - Add `files.filter` for file path pattern.
+    - Optimize separator in file path between different os
 - Ver 0.0.7 Update readme and bugfix
 - Ver 0.0.6 Main

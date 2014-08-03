@@ -7,24 +7,19 @@ module.exports = function(grunt) {
             }
         },
         htmlmin: {
+            options: {
+                removeComments: true
+            },
             dir: {
                 options: {
-                    removeComments: true,
                     collapseWhitespace: true
                 },
                 files: {
-                    src: 'test/src/',
-                    dest: 'test/dest/'
-                }
-            },
-            file: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true
-                },
-                files: {
-                    src: 'test/src/index.html',
-                    dest: 'test/dest/index.html'
+                    src: ['**/*.html'],
+                    dest: 'test/dest/',
+                    filter: {
+                        cwd: 'test/src/'
+                    }
                 }
             }
         }
