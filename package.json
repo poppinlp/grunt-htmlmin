@@ -1,6 +1,6 @@
 {
     "name": "grunt-htmlmin",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Grunt task to minify html.",
     "main": "tasks/htmlmin.js",
     "repository": {

@@ -128,6 +128,7 @@ grunt test
 
 ### Version
 
+- Ver 0.1.1 Bugfix
 - Ver 0.1.0
     - Support global options for htmlmin
     - Support file path pattern for `files.src`

@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
         function minFile (path) {
             var text,
-                src = nodePath.normalize((task.filter.cwd || '') + nodePath.sep + path),
+                src = nodePath.normalize((task.filter ? (task.filter.cwd || '.') : '.') + nodePath.sep + path),
                 target = nodePath.normalize(task.dest + nodePath.sep + path);
 
             text = grunt.file.read(src, { encoding: 'utf8' });
