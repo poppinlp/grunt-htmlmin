@@ -11,6 +11,7 @@
 module.exports = function (grunt) {
     grunt.registerTask('htmlmin', 'Minify HTML', function () {
         var minify = require('html-minifier').minify,
+            fixPattern = require('dir2pattern').fix,
             nodePath = require('path'),
             config = grunt.config.get('htmlmin'),
             ln = grunt.util.linefeed,
@@ -65,13 +66,6 @@ module.exports = function (grunt) {
                 }
             }
             return self;
-        }
-
-        function fixPattern (path) {
-            if (grunt.file.isDir(path)) {
-                path += nodePath.sep + '*';
-            }
-            return nodePath.normalize(path);
         }
     });
 };

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/poppinlp/grunt-htmlmin.png?branch=master)](https://travis-ci.org/poppinlp/grunt-htmlmin)
 
-Grunt task to minify html. Ignore `.filename` and `_filename`.
+Grunt task to minify html.
 
 ### Getting Started
 
@@ -27,7 +27,13 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ### Options
 
-For detail about options please see [options](https://github.com/kangax/html-minifier#options-quick-reference).
+#### options
+
+For detail about htmlmin options, please see [htmlmin options](https://github.com/kangax/html-minifier#options-quick-reference).
+
+#### files.filter
+
+For more detail about this option, please see [minimatch options](https://github.com/isaacs/minimatch#options).
 
 ### Usage Example
 
@@ -116,8 +122,6 @@ grunt.config.init({
 });
 ```
 
-__See [this page](https://github.com/isaacs/minimatch#options) for more options about filter.__
-
 ### Demo
 
 Run the test demo:
@@ -128,6 +132,7 @@ grunt test
 
 ### Version
 
+- Ver 0.1.2 Require `dir2pattern` to replace `fixPattern`
 - Ver 0.1.1 Bugfix
 - Ver 0.1.0
     - Support global options for htmlmin
