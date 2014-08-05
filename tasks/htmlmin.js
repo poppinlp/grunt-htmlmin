@@ -13,18 +13,36 @@ module.exports = function (grunt) {
         var minify = require('html-minifier').minify,
             fixPattern = require('dir2pattern').fix,
             nodePath = require('path'),
+            fs = require('fs'),
             config = grunt.config.get('htmlmin'),
             ln = grunt.util.linefeed,
-            globalOptions = config.options || {},
+            cwd = __dirname + nodePath.sep + '..' + nodePath.sep,
+            globalOptions = extend({
+                newer: true
+            }, config.options || {}),
+            timestampPath = cwd + 'config' + nodePath.sep + 'timestamp.json',
+            timestamp = {},
+            defaultTimestamp = {},
             taskOptions = {},
+            encoding = { encoding: 'utf8' },
             task,
             files,
             len;
+
+        // read timestamp
+        if (globalOptions.newer) {
+            try {
+                timestamp = grunt.file.readJSON(timestampPath, encoding);
+            } catch (err) {
+                timestamp = defaultTimestamp;
+            }
+        }
 
         for (task in config) {
             if (task !== 'options' && config.hasOwnProperty(task)) {
                 task = config[task];
                 taskOptions = extend(globalOptions, task.options || {});
+                if (!timestamp[task]) timestamp[task] = {};
 
                 task = task.files;
                 if (grunt.util.kindOf(task.src) === 'array') {
@@ -44,15 +62,22 @@ module.exports = function (grunt) {
             }
         }
 
+        if (globalOptions.newer) {
+            grunt.file.write(timestampPath, JSON.stringify(timestamp), encoding);
+        }
+
         function minFile (path) {
             var text,
                 src = nodePath.normalize((task.filter ? (task.filter.cwd || '.') : '.') + nodePath.sep + path),
-                target = nodePath.normalize(task.dest + nodePath.sep + path);
+                target = nodePath.normalize(task.dest + nodePath.sep + path),
+                lastChange = fs.statSync(src).mtime.getTime();
 
-            text = grunt.file.read(src, { encoding: 'utf8' });
+            if (globalOptions.newer && lastChange === timestamp[task][src]) return;
+            text = grunt.file.read(src, encoding);
             try {
                 text = minify(text, taskOptions);
-                grunt.file.write(target, text, { encoding: 'utf8' });
+                grunt.file.write(target, text, encoding);
+                timestamp[task][src] = lastChange;
             } catch (err) {
                 grunt.fail.fatal(src + ln + err);
             }

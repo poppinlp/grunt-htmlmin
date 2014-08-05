@@ -1,6 +1,8 @@
 # Grunt-htmlmin
 
 [![Build Status](https://travis-ci.org/poppinlp/grunt-htmlmin.png?branch=master)](https://travis-ci.org/poppinlp/grunt-htmlmin)
+[![Dependency Status](https://david-dm.org/poppinlp/grunt-htmlmin.svg)](https://david-dm.org/poppinlp/grunt-htmlmin)
+[![devDependency Status](https://david-dm.org/poppinlp/grunt-htmlmin/dev-status.svg)](https://david-dm.org/poppinlp/grunt-htmlmin#info=devDependencies)
 
 Grunt task to minify html.
 
@@ -30,6 +32,10 @@ Task targets, files and options may be specified according to the grunt [Configu
 #### options
 
 For detail about htmlmin options, please see [htmlmin options](https://github.com/kangax/html-minifier#options-quick-reference).
+
+#### newer
+
+Only build changed file and new file. Default `true`. Only work in global options.
 
 #### files.filter
 
@@ -132,6 +138,9 @@ grunt test
 
 ### Version
 
+- Ver 0.1.3
+    - Add dependency and devDependencies check
+    - Add `newer` option
 - Ver 0.1.2 Require `dir2pattern` to replace `fixPattern`
 - Ver 0.1.1 Bugfix
 - Ver 0.1.0
