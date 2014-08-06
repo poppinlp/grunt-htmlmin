@@ -11,7 +11,7 @@
 module.exports = function (grunt) {
     grunt.registerTask('htmlmin', 'Minify HTML', function () {
         var minify = require('html-minifier').minify,
-            fixPattern = require('dir2pattern').fix,
+            fixPattern = require('dir2pattern'),
             nodePath = require('path'),
             fs = require('fs'),
             config = grunt.config.get('htmlmin'),

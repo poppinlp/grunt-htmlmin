@@ -33,7 +33,7 @@
     "dependencies": {
         "html-minifier": ">=0.6.1",
         "grunt": ">=0.4.5",
-        "dir2pattern": ">=0.0.3"
+        "dir2pattern": ">=0.0.4"
     },
     "devDependencies": {
         "grunt-contrib-jshint": ">=0.10.0"

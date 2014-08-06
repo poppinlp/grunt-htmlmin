@@ -138,6 +138,7 @@ grunt test
 
 ### Version
 
+- Ver 0.1.4 Update `dir2pattern` to 0.0.4
 - Ver 0.1.3
     - Add dependency and devDependencies check
     - Add `newer` option
