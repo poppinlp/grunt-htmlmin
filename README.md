@@ -29,17 +29,25 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ### Options
 
-#### options
+#### options {Object}
 
-For detail about htmlmin options, please see [htmlmin options](https://github.com/kangax/html-minifier#options-quick-reference).
+Include htmlmin options. For detail about htmlmin options, please see [htmlmin options](https://github.com/kangax/html-minifier#options-quick-reference).
 
-#### newer
+#### options.newer {Boolean}
 
 Only build changed file and new file. Default `true`. Only work in global options.
 
-#### files.filter
+#### files.src {String|Array}
 
-For more detail about this option, please see [minimatch options](https://github.com/isaacs/minimatch#options).
+Source files. Support file path, glob and array.
+
+#### files.dest {String}
+
+The destination for min source.
+
+#### files.filter {Object}
+
+Settings for glob in `files.src`. For more detail about this option, please see [glob options](https://github.com/isaacs/node-glob#options).
 
 ### Usage Example
 
