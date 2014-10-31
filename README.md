@@ -53,7 +53,7 @@ Settings for glob in `files.src`. For more detail about this option, please see 
 
 #### Basic
 
-```
+```js
 grunt.config.init({
     htmlmin: {
         file: {
@@ -72,7 +72,7 @@ grunt.config.init({
 
 #### Global options
 
-```
+```js
 grunt.config.init({
     htmlmin: {
         options: {
@@ -93,7 +93,7 @@ grunt.config.init({
 
 #### Use pattern
 
-```
+```js
 grunt.config.init({
     htmlmin: {
         options: {
@@ -114,7 +114,7 @@ grunt.config.init({
 
 #### Use src array and filter
 
-```
+```js
 grunt.config.init({
     htmlmin: {
         options: {
@@ -140,7 +140,7 @@ grunt.config.init({
 
 Run the test demo:
 
-```
+```shell
 grunt test
 ```
 
